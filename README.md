@@ -1,6 +1,8 @@
 # UFO-WebApp-with-D3JS
 This is a javascript (D3) based web app that generates UFO Sightings Data Set
 
+To view the website: https://github.com/wenbin-billy-zhao/UFO-WebApp-with-D3JS
+
 ![UFO FOO](/static/images/ufo2.jpg)
 
 ## Background Information (!! Classified !!)
