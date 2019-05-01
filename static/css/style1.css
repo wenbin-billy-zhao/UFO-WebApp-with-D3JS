@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Allan');
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+@import url('https://fonts.googleapis.com/css?family=Titan+One');
+@import url('https://fonts.googleapis.com/css?family=Frijole');
+
+.footer > .container{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    line-height: 1.1;
+    color: orange;
+    font-feature-settings: "kern" 1;
+    -webkit-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern-2";
+    font-kerning: normal;
+}
+
+.jumbotron {
+    
+    margin-top: 0px;
+    height: 350px;
+    text-shadow: black 0.15em 0.15em 0.15em;
+    background-image: url("/static/images/ufo-banner1.jpg");
+    background-size: cover;
+
+}
+
+body {
+    background-color: darkgray;
+    font-family: 'Special Elite', cursive;
+    font-size: 0.85em;
+}
+
+.footer {
+    height: 50px;
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+
+}
+
+div.dataTables_filter input {
+    background-color:beige;
+}
+
+select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.form-control:not([size]):not([multiple]), .input-group-sm > select.input-group-addon:not([size]):not([multiple]), .input-group-sm > .input-group-btn > select.btn:not([size]):not([multiple]) {
+   background-color: beige;
+   font-weight: 400;
+}
+
+.list-group-item:last-child {
+    background-color: beige;
+    color: black;
+}
+
+.panel-heading {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.resetBtn {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+
+}
+
+.title {
+    font-size: 3.5em;
+    text-align: center;
+    font-family: 'Frijole', cursive;
+
+}
+
+.subtitle {
+    font-size: 2em;
+    font-family: Allan, cursive;
+    font-weight: 300;
+    text-align: center;
+    padding: 10px;
+    color:orange;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.xfile {
+    text-align: center;
+    font-size: 1.2em;
+    color: red;
+    text-shadow: black 0.1em 0.1em 0.1em;
+}
+
+a:active {
+    top: 1px;
+  }

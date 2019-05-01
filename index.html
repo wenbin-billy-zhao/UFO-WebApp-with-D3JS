@@ -1,79 +1,118 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>UFO Finder</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <link rel="stylesheet" href="static/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+
+    
+    <!-- bootstrap 4 css libraries -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.css">
+    <!-- end of bootstrap 4 css libraries -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="static/css/style1.css">
+    <title>CIA Classified - UFO Sightings</title>
 </head>
-
 <body>
-  <div class="wrapper">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="index.html">UFO Sightings
-            <img class="nav-ufo" src="static/images/ufo.svg">
-          </a>
-        </div>
-      </div>
-    </nav>
-    <div class="hero text-center">
-      <h1>UFO Sightings</h1>
-      <p>The Truth is Out There</p>
-    </div>
-    <div class="container">
-      <div class="row margin-top-50">
-        <div class="col-md-2">
-          <aside class="filters">
-            <div class="panel panel-default">
-              <div class="panel-heading">Filter Search</div>
-              <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="filters">
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
-                      </li>
-                    </ul>
-                  </div>
-                  <button id="filter-btn" type="submit" class="btn btn-default">Filter Table</button>
-                </form>
-              </div>
+   <div class="header">
+       <div class="jumbotron jumbotron-fluid">
+           <div class="container">
+               <h1 class="title">CIA Top Classified Info:<br>UFO Sightings</h1>
+               <h2 class="subtitle">Full Transparency: Saw Nothing, Knew Nothing, Admit Nothing, Deny Everything...</h2>
+           </div>
+       </div>
+   </div> 
+   <div class="container">
+       <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="panel-heading">Filter Search</div>
+                <div class="panel-body">
+                  <form>
+                    <div class="form-group">
+                      <ul class="list-group" id="filters">
+                        <li class="filter list-group-item">
+                          <label for="date">Choose Dates</label>
+                          <select id="d3-dropdown-date"></select>
+                          <br>
+                          <label for="city">Choose City</label>
+                          <select id="d3-dropdown-city">
+                          </select>
+                          <br>
+                          <label for="country">Choose Country</label>
+                          <select id="d3-dropdown-country">
+                          </select>
+                          <br>
+                          <label for="state">Choose State</label>
+                          <select id="d3-dropdown-state">
+                          </select>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="resetBtn">
+                      <button id="filter-btn" type="submit" class="btn btn-default">Reset Filters</button>
+                    </div>
+                    <div class="xfile">
+                      <audio id="audio" src="static/images/xfile.mp3" autostart="false"></audio>
+                      <a onclick="PlaySound()" class="music">Don't Click Here!<br>
+                      It's going to annoy you!</a>
+                      <script>
+                          function PlaySound() {
+                                var sound = document.getElementById("audio");
+                                sound.play()
+                          }
+                      </script>
+                    </div>
+                  </form>
+                </div>
+            </div>   
+            <div class="col-sm-12 col-md-8 col-lg-8">
+                <div id="table-area" cellspacing="0" width="100%">
+                        <table id="example" class="table table-striped table-bordered table-dark table-responsive">
+                          <thead>
+                            <tr>
+                              <th class="table-head">Date</th>
+                              <th class="table-head">City</th>
+                              <th class="table-head">State</th>
+                              <th class="table-head">Country</th>
+                              <th class="table-head">Shape</th>
+                              <th class="table-head">Duration</th>
+                              <th class="table-head">Comments</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- table content generated by D3.js -->
+                          </tbody>
+                        </table>
+                      </div>
             </div>
-          </aside>
-        </div>
-        <div class="col-md-10">
-          <div id="table-area" class="">
-            <table id="ufo-table" class="table table-striped">
-              <thead>
-                <tr>
-                  <th class="table-head">Date</th>
-                  <th class="table-head">City</th>
-                  <th class="table-head">State</th>
-                  <th class="table-head">Country</th>
-                  <th class="table-head">Shape</th>
-                  <th class="table-head">Duration</th>
-                  <th class="table-head">Comments</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-      <span class="bottom">UFO Sightings</span>
-    </footer>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-  <script src="static/js/data.js"></script>
-  <script src="static/js/app.js"></script>
-</body>
+       </div>
+   </div>
+   <div class="footer">
+       
+   </div>
 
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted">&reg;2019 - Billy Zhao - Not an official site of any particular agency!</span>
+    </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="static/js/data.js"></script>
+<script src="static/js/app.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+</body>
 </html>
