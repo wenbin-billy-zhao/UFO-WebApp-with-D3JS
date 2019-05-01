@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-top: 0px;
     height: 350px;
     text-shadow: black 0.15em 0.15em 0.15em;
-    background-image: url("/static/images/ufo-banner1.jpg");
+    background-image: url("../images/ufo-banner1.jpg");
     background-size: cover;
 
 }
